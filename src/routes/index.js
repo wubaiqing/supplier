@@ -8,7 +8,7 @@ const Routes = ({ history }) =>
     <Route path="/" component={App} />
     <Route path="/enroll" component={App} />
     <Route path="/popularize" component={App} />
-    <Route path="/submit" component={App} />
+    <Route path="/joins" component={App} />
     <Route path="*" component={Error}/>
   </Router>;
 

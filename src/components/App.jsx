@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Joins from './Todos/Joins';
+import Joins from './Joins/Joins';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 
 const App = ({ location }) => {

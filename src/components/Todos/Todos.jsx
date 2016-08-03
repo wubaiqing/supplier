@@ -1,8 +1,13 @@
+// 商家后台
+
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Spin } from 'antd';
 import Todo from './Todo';
 import styles from './Todos.less';
+
+import { Form, Input, Button, Checkbox } from 'antd';
+const FormItem = Form.Item;
 
 const Todos = ({ todos, dispatch }) => {
   const handleToggleComplete = (id) => {
@@ -20,12 +25,6 @@ const Todos = ({ todos, dispatch }) => {
 
     return (
       <div className={styles.list}>
-        {list.map(item => <Todo
-          key={item.id}
-          data={item}
-          onToggleComplete={handleToggleComplete.bind(this, item.id)}
-        />
-          )}
       </div>
     );
   };

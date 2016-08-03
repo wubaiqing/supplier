@@ -6,7 +6,7 @@ const MainLayout = ({ children }) => {
   return (
     <div className={styles.normal}>
       <div className={styles.head}>
-        <h1>Todo App</h1>
+        <h1>商家平台</h1>
       </div>
       <div className={styles.content}>
         <div className={styles.side}>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from 'antd';
-import styles from './NotFound/NotFound.less';
+import styles from './Error.less';
 
-const NotFound = () => {
+const Error = () => {
   return (
     <div className={styles.normal}>
       <div className={styles.container}>
@@ -14,4 +14,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Error;

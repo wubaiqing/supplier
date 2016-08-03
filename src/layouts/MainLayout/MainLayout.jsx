@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Router, Route, IndexRoute, Link } from 'react-router';
 import styles from './MainLayout.less';
+import { Alert } from 'antd';
 
 const MainLayout = ({ children }) => {
   return (
@@ -8,20 +9,13 @@ const MainLayout = ({ children }) => {
       <div className={styles.head}>
         <h1>商家平台</h1>
       </div>
-      <div className={styles.content}>
-        <div className={styles.side}>
-          <h2>Filters:</h2>
-          <Link to="/">All</Link><br />
-          <Link to="/actived">Actived</Link><br />
-          <Link to="/completed">Completed</Link><br />
-          <Link to="/404">404</Link><br />
-        </div>
+      <div className={styles.mainWrapper}>
         <div className={styles.main}>
           {children}
         </div>
       </div>
       <div className={styles.foot}>
-        Built with react, react-router, redux, redux-saga, ant-tool, css-modules, antd...
+      联系QQ：534095228，QQ群：183637828，技术支持QQ：457273793  基于<a href="http://ant.design/" target="_blank">Ant Design</a>开发
       </div>
     </div>
   );

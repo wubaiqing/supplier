@@ -1,16 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import Todos from './Todos/Todos';
+import Joins from './Todos/Joins';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 
 const App = ({ location }) => {
   return (
     <MainLayout>
-      <Todos location={location} />
+      <Joins location={location} />
     </MainLayout>
   );
-};
-
-App.propTypes = {
 };
 
 export default App;

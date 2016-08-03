@@ -1,18 +1,16 @@
 import React, { PropTypes } from 'react';
-import { Router, Route, IndexRoute, Link } from 'react-router';
+import { Router, Route } from 'react-router';
 import App from '../components/App';
-import NotFound from '../components/NotFound';
+import Error from '../components/NotFound/Error';
 
-const Routes = ({ history }) =>
+const Routes = ({ history }) => 
   <Router history={history}>
     <Route path="/" component={App} />
-    <Route path="/actived" component={App} />
-    <Route path="/completed" component={App} />
-    <Route path="*" component={NotFound}/>
+    <Route path="/enroll" component={App} />
+    <Route path="/popularize" component={App} />
+    <Route path="/submit" component={App} />
+    <Route path="*" component={Error}/>
   </Router>;
 
-Routes.propTypes = {
-  history: PropTypes.any,
-};
 
 export default Routes;

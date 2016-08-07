@@ -9,12 +9,8 @@ import { Link } from 'react-router'
 // 表单
 import { Form, Input, Button, Checkbox, Steps, Row, Col, Tag, Breadcrumb, Icon} from 'antd';
 
-const Enroll = () => {
-  let handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const renderList = () => {
+let Enroll = React.createClass({
+  renderList() {
     return (
       <div className={styles.form}>
         <Row className={commons.explain}>
@@ -42,14 +38,17 @@ const Enroll = () => {
 
       </div>
       );
-  };
+  },
 
-  return (
-    <div className={styles.normal}>
-      {renderList()}
-    </div>
+  render() {
+    return (
+      <div className={styles.normal}>
+        {this.renderList()}
+      </div>
     );
-};
+  }
+
+});
 
 
 export default Enroll;

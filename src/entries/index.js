@@ -13,32 +13,34 @@ import './index.less';
 //////////////////////
 // Store
 
-const sagaMiddleware = createSagaMiddleware();
+// const sagaMiddleware = createSagaMiddleware();
 const initialState = {};
-const enhancer = compose(
-  applyMiddleware(sagaMiddleware),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
-);
+const enhancer = {};
+// const enhancer = compose(
+//   applyMiddleware(sagaMiddleware),
+//   window.devToolsExtension ? window.devToolsExtension() : f => f
+// );
 const store = createStore(combineReducers({
   ...reducers, routing,
-}), initialState, enhancer);
-SagaManager.startSagas(sagaMiddleware);
+}), initialState);
+// SagaManager.startSagas(sagaMiddleware);
 
-if (module.hot) {
-  module.hot.accept('../reducers', () => {
-    const reducers = require('../reducers');
-    const combinedReducers = combineReducers({ ...reducers, routing });
-    store.replaceReducer(combinedReducers);
-  });
-  module.hot.accept('../sagas/SagaManager', () => {
-    SagaManager.cancelSagas(store);
-    require('../sagas/SagaManager').default.startSagas(sagaMiddleware);
-  });
-}
+// if (module.hot) {
+//   module.hot.accept('../reducers', () => {
+//     const reducers = require('../reducers');
+//     const combinedReducers = combineReducers({ ...reducers, routing });
+//     store.replaceReducer(combinedReducers);
+//   });
+//   module.hot.accept('../sagas/SagaManager', () => {
+//     SagaManager.cancelSagas(store);
+//     require('../sagas/SagaManager').default.startSagas(sagaMiddleware);
+//   });
+// }
 
 //////////////////////
 // Render
 
+// const history = syncHistoryWithStore(browserHistory, store);
 const history = syncHistoryWithStore(browserHistory, store);
 
 let render = () => {

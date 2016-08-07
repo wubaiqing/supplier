@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => {
   return (
     <div className={styles.normal}>
       <div className={styles.head}>
-        <h1>商家平台</h1>
+        <h1>淘客大牛商家平台</h1>
       </div>
       <div className={styles.mainWrapper}>
         <div className={styles.main}>

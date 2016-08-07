@@ -35,7 +35,7 @@ let Joins = React.createClass({
         return;
       }
       input.state.loading = true;
-      $.getJSON('http://article.app/api/supplier', {...this.props.form.getFieldsValue()}, (data) => {
+      $.getJSON('http://www.taokedaniu.com/api/supplier', {...this.props.form.getFieldsValue()}, (data) => {
         if (data.status) {
           input.state.loading = false;
           message.success('添加成功');

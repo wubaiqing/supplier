@@ -25,7 +25,7 @@ export default class Enroll extends React.Component{
 
           <Col span={12} offset={1}>
             <strong>推广说明:</strong>
-            <p>1、不符合报名要求的、佣金不给力的商品一律不推</p>
+            <p>1、不符合要求的商品，佣金比例不是历史最高的，一律不推，请勿报名</p>
             <p>2、佣金给力且符合要求的商品，我们会在创建清单和写帖子时选择符合</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题的宝贝进行推广</p>
             <p>3、联系QQ：534095228</p>

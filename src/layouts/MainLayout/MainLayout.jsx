@@ -15,7 +15,7 @@ const MainLayout = ({ children }) => {
         </div>
       </div>
       <div className={styles.foot}>
-      联系QQ：534095228，QQ群：183637828，技术支持QQ：457273793  基于<a href="http://ant.design/" target="_blank">Ant Design</a>开发
+      联系QQ：534095228 &nbsp;&nbsp; QQ群：183637828
       </div>
     </div>
   );

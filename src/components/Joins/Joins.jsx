@@ -17,30 +17,41 @@ const CreateForm = Form.create;
 
 let Joins = React.createClass({
 
+  /**
+   * 显示加载状态
+   */
   getInitialState() {
     return { loading: false };
   },
 
-  toggle(value) {
-    this.setState({ loading: value });
-  },
-
-  // 重置
+  /**
+   * 重置
+   */
   handleReset(e) {
     e.preventDefault();
     this.props.form.resetFields();
   },
 
-  // 提交
+  /**
+   * 重置
+   */
   handleSubmit(e) {
+    // 禁止向下传递事件
     e.preventDefault();
+
+    // 当前对象
     let input = this;
+
+    // 验证字段信息
     this.props.form.validateFields((errors, values) => {
       if (!!errors) {
         return;
       }
+
+      // 设置Spin状态
       input.state.loading = true;
       $.getJSON('http://www.taokedaniu.com/api/supplier', {...this.props.form.getFieldsValue()}, (data) => {
+        // 成功提示
         if (data.status) {
           const modal = Modal.success({
             title: '提交成功',
@@ -68,7 +79,6 @@ let Joins = React.createClass({
     const formItemLayout = {
       labelCol: { span: 5 },
       wrapperCol: { span: 19 }
-
     };
 
     const taobaoUrlProps = getFieldProps('taobao_url', {

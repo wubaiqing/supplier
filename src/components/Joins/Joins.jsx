@@ -10,7 +10,7 @@ import styles from './Joins.less';
 import Enroll from '../Enroll/Enroll';
 
 // 表单
-import { Form, Input, Button, Checkbox, Steps, Row, Col, Spin, message } from 'antd';
+import { Form, Input, Button, Checkbox, Steps, Row, Col, Spin, Modal } from 'antd';
 const FormItem = Form.Item;
 const CreateForm = Form.create;
 
@@ -42,11 +42,19 @@ let Joins = React.createClass({
       input.state.loading = true;
       $.getJSON('http://www.taokedaniu.com/api/supplier', {...this.props.form.getFieldsValue()}, (data) => {
         if (data.status) {
+          const modal = Modal.success({
+            title: '提交成功',
+            okText: '关闭',
+          });
+          setTimeout(() => modal.destroy(), 1000);
           input.state.loading = false;
-          message.success('添加成功');
           input.props.form.resetFields();
         } else {
-          message.error('创建失败，请联系QQ反馈');
+          const modal = Modal.success({
+            title: '失败，请联系QQ反馈',
+            okText: '关闭',
+          });
+          setTimeout(() => modal.destroy(), 1000);
           input.state.loading = false;
         }
       });

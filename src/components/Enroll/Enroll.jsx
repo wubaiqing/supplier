@@ -20,14 +20,16 @@ export default class Enroll extends React.Component{
             <p>2、C店要求3钻以上</p>
             <p>3、当前销量不低于30笔，评价不低于10个</p>
             <p>4、目前主要推广以下几个类目的宝贝：</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;男女服装服饰、美食、居家用品、数码家电、母婴用品、户外运动。</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;男女服装服饰、美食、居家用品、数码家电、母婴用品、户外运动。</p>
+            <p>5、【重要】高佣金比例，不管是通用的，定向的，还是隐藏的，都必</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;须是历史最高佣金比例</p>
           </Col>
 
           <Col span={12} offset={1}>
             <strong>推广说明:</strong>
             <p>1、不符合要求的商品，佣金比例不是历史最高的，一律不推，请勿报名</p>
             <p>2、佣金给力且符合要求的商品，我们会在创建清单和写帖子时选择符合</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题的宝贝进行推广</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题的宝贝进行推广</p>
             <p>3、联系QQ：534095228</p>
             <p>4、QQ群：183637828</p>
           </Col>

@@ -6,7 +6,6 @@ import Error from '../components/NotFound/Error';
 const Routes = ({ history }) => 
   <Router history={history}>
     <Route path="/" component={Join}></Route>
-    <Route path="/joins" component={Join} />
     <Route path="*" component={Error}/>
   </Router>;
 

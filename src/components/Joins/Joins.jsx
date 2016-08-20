@@ -146,7 +146,7 @@ let Joins = React.createClass({
     const catId = getFieldProps('cat_id', {
       initialValue: '',
       rules: [
-      { message: '请填选择分类' },
+      { required: true, message: '请填选择分类' },
       ],
     });
 

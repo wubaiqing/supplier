@@ -55,7 +55,7 @@ let Joins = React.createClass({
 
       // 设置Spin状态
       input.state.loading = true;
-      $.getJSON('http://we.taokedaniu.com/api/supplier', {...this.props.form.getFieldsValue()}, (data) => {
+      $.getJSON('http://article.app/api/supplier', {...this.props.form.getFieldsValue()}, (data) => {
         // 成功提示
         if (data.status) {
           const modal = Modal.success({

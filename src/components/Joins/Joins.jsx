@@ -10,9 +10,10 @@ import styles from './Joins.less';
 import Enroll from '../Enroll/Enroll';
 
 // 表单
-import { Form, Input, Button, Checkbox, Steps, Row, Col, Spin, Modal } from 'antd';
+import { Form, Input, Button, Checkbox, Steps, Row, Col, Spin, Modal, Select} from 'antd';
 const FormItem = Form.Item;
 const CreateForm = Form.create;
+const Option = Select.Option;
 
 
 let Joins = React.createClass({
@@ -30,6 +31,10 @@ let Joins = React.createClass({
   handleReset(e) {
     e.preventDefault();
     this.props.form.resetFields();
+  },
+
+  handleMenuClick(e) {
+
   },
 
   /**
@@ -50,7 +55,7 @@ let Joins = React.createClass({
 
       // 设置Spin状态
       input.state.loading = true;
-      $.getJSON('http://www.taokedaniu.com/api/supplier', {...this.props.form.getFieldsValue()}, (data) => {
+      $.getJSON('http://we.taokedaniu.com/api/supplier', {...this.props.form.getFieldsValue()}, (data) => {
         // 成功提示
         if (data.status) {
           const modal = Modal.success({
@@ -77,8 +82,8 @@ let Joins = React.createClass({
     const { getFieldProps, getFieldError, isFieldValidating } = this.props.form;
 
     const formItemLayout = {
-      labelCol: { span: 5 },
-      wrapperCol: { span: 19 }
+      labelCol: { span: 6 },
+      wrapperCol: { span: 18 }
     };
 
     const taobaoUrlProps = getFieldProps('taobao_url', {
@@ -113,16 +118,38 @@ let Joins = React.createClass({
     const telePhone = getFieldProps('telephone', {
       initialValue: '',
       rules: [
-      { required: true, message: '请填写联系电话' },
+      { message: '请填写联系电话' },
+      ],
+    });
+
+    const reason = getFieldProps('reason', {
+      initialValue: '',
+      rules: [
+      { required: true, message: '请填写推荐理由' },
       ],
     });
 
     const wechat = getFieldProps('wechat', {
       initialValue: '',
       rules: [
-      { required: true, message: '请填写微信' },
+      { message: '请填写微信' },
       ],
     });
+
+    const type = getFieldProps('type', {
+      initialValue: '',
+      rules: [
+      { message: '请填选择分类' },
+      ],
+    });
+
+    const catId = getFieldProps('cat_id', {
+      initialValue: '',
+      rules: [
+      { message: '请填选择分类' },
+      ],
+    });
+
 
     return (
 
@@ -137,6 +164,34 @@ let Joins = React.createClass({
             <Col span={15}>
               <FormItem label="宝贝链接" {...formItemLayout} >
                 <Input {...taobaoUrlProps} />
+              </FormItem>
+            </Col>
+            </Row>
+            <Row>
+            <Col span={15}>
+
+              <FormItem label="商品分类" {...formItemLayout}>
+                <Select style={{ width: 200 }}
+                  {...catId}
+                >
+                  <Option value="1">时尚车主</Option>
+                  <Option value="2">潮女搭配师</Option>
+                  <Option value="3">居家巧匠</Option>
+                  <Option value="4">型男塑造师</Option>
+                  <Option value="5">户外行者</Option>
+                  <Option value="6">美食专家</Option>
+                  <Option value="7">数码极客</Option>
+                  <Option value="8">美妆老师</Option>
+                  <Option value="9">文娱先锋</Option>
+                  <Option value="10">母婴达人</Option>
+                </Select>
+              </FormItem>
+            </Col>
+            </Row>
+            <Row>
+            <Col span={15}>
+              <FormItem label="商品推荐理由" {...formItemLayout}>
+                <Input {...reason} />
               </FormItem>
             </Col>
             </Row>

@@ -194,6 +194,9 @@ let Joins = React.createClass({
                 <Input {...reason} />
               </FormItem>
             </Col>
+            <Col span={9}>
+              （ 不多于20个汉字 ）
+            </Col>
             </Row>
             <Row>
               <Col span={15}>
